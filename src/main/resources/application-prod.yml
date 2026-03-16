@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 클라우드 DB의 IP와 계정 정보는 배포 시 환경변수로 주입받습니다.
+    url: jdbc:mysql://${DB_HOST}:3306/${DB_NAME}?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      # 클라우드 DB에 테이블을 새로 만들어야 하므로 처음엔 update로 설정합니다.
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+jwt:
+  # JWT 비밀키도 환경변수로 숨깁니다.
+  secret: ${JWT_SECRET}
+  access-token-validity: 86400000
+  refresh-token-validity: 604800000
+
+springdoc:
+  api-docs:
+    enabled: true
