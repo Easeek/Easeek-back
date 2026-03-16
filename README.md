@@ -1,8 +1,4 @@
-업로드해주신 프로젝트의 구조와 설정 파일(Spring Security, JWT, Swagger 등)을 분석하여, 누구나 프로젝트를 쉽게 이해하고 실행할 수 있도록 표준적인 `README.md` 템플릿을 작성해 드립니다.
 
-이 내용을 복사해서 프로젝트 최상위 경로에 `README.md` 파일로 저장하시면 됩니다.
-
----
 
 ```markdown
 # Easeek Backend API (Alba Platform)
@@ -120,12 +116,3 @@ gcloud run deploy alba-platform-api \
 * `Authorization: Bearer <Access_Token>` 헤더를 통해 인증이 필요한 API에 접근할 수 있습니다.
 * Refresh Token을 통해 Access Token 만료 시 재발급을 수행합니다.
 
-```
-
----
-
-**💡 추가 팁:**
-* 위 내용을 복사해서 프로젝트 최상위 디렉토리에 `README.md`라는 이름으로 저장하신 후, 띄어쓰기 한 칸이라도 수정해서 `git add .`, `git commit -m "Add README.md"`, `git push`를 진행해 보세요.
-* 방금 설정하신 **GCP Cloud Build 트리거가 이 `push`를 감지하여 방화벽 설정이 완료된 새로운 버전의 서버를 자동으로 배포(재배포)**하게 됩니다!
-
-```
