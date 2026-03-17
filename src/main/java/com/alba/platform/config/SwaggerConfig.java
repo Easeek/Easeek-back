@@ -46,8 +46,8 @@ public class SwaggerConfig {
             .version("1.0.0")
             .contact(new Contact()
                 .name("조영호")
-                .email("youngh@example.com")
-                .url("https://github.com/youngh"))
+                .email("youngho7482@naver.com")
+                .url("https://github.com/ohobackend"))
             .license(new License()
                 .name("MIT License")
                 .url("https://opensource.org/licenses/MIT"));
