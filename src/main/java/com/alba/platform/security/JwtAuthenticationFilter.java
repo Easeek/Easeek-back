@@ -34,6 +34,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
         HttpServletResponse response,
         FilterChain filterChain) throws ServletException, IOException {
+
+        // [추가된 부분] OPTIONS 요청(Preflight)은 토큰 검사 없이 바로 통과
+        if (request.getMethod().equalsIgnoreCase("OPTIONS")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+    
         try {
             String jwt = getJwtFromRequest(request);
 
