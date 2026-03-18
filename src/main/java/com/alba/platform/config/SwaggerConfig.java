@@ -32,11 +32,7 @@ public class SwaggerConfig {
         return new OpenAPI()
             .components(new Components().addSecuritySchemes("Bearer Authentication", securityScheme))
             .security(List.of(securityRequirement))
-            .info(apiInfo())
-            .servers(List.of(
-                new Server().url("http://localhost:8080").description("로컬 개발 서버"),
-                new Server().url("https://api.alba-platform.com").description("프로덕션 서버")
-            ));
+            .info(apiInfo());
     }
 
     private Info apiInfo() {
